@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeToken, setToken } from "../../Store/auth";
+import { BASE_AUTH_API } from "../../Config/urlApi";
 
 function LandingPage() {
-  const CLIENT_ID = "ef0d7879ebe44432b2e88c347b56c2bb";
-  const REDIRECT_URI = "http://localhost:3000/";
-  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-  const SCOPE = [
+  const Client_Id = "ef0d7879ebe44432b2e88c347b56c2bb";
+  const Redirect_Uri = "http://localhost:3000/";
+  const Auth_Api = BASE_AUTH_API;
+  const Scope = [
     "user-read-private",
     "user-read-email",
     "user-modify-playback-state",
@@ -15,8 +16,8 @@ function LandingPage() {
     "user-read-recently-played",
     "user-top-read",
   ];
-  const RESPONSE_TYPE = "token";
-  const openData = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+  const Response_Type = "token";
+  const openData = `${Auth_Api}?client_id=${Client_Id}&redirect_uri=${Redirect_Uri}&response_type=${Response_Type}&scope=${Scope}`;
 
   const dispatch = useDispatch();
 

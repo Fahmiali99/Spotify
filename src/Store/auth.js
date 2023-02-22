@@ -3,14 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 export const authentication = createSlice({
   name: "auth",
   initialState: {
-    token: "",
+    isAuthorized: "",
   },
   reducers: {
     setToken: (state, action) => {
-      state.token = action.payload;
+      state.isAuthorized = action.payload;
     },
     removeToken: (state) => {
-      state.token = "";
+      state.isAuthorized = "";
     },
   },
 });
