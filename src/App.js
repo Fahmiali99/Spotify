@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
+import "./App.css";
+
+import LandingPage from "./Pages/LandingPage";
+import { useSelector, useDispatch } from "react-redux";
+import { removeToken } from "./Store/auth";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
+  const dispatch = useDispatch();
+  let { token } = useSelector((state) => state.auth);
+
+  const logout = () => {
+    dispatch(removeToken());
+    window.localStorage.removeItem("token");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="bg-slate-900 text-white  ">
+        <Switch>
+          <Route exact path="/">
+            {token ? (
+              <Redirect exact from="/" to="/create-playlist" />
+            ) : (
+              <LandingPage />
+            )}
+          </Route>
+          <Route path="/create-playlist">
+            {!token ? (
+              <Redirect exact from="/create-playlist" to="/" />
+            ) : (
+              <Dashboard logout={logout} />
+            )}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
