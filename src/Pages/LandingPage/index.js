@@ -1,24 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeToken, setToken } from "../../Store/auth";
-import { BASE_AUTH_API } from "../../Config/urlApi";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../Store/auth";
+import { openData } from "../../Config/urlApi";
 
 function LandingPage() {
-  const Client_Id = "ef0d7879ebe44432b2e88c347b56c2bb";
-  const Redirect_Uri = "http://localhost:3000/";
-  const Auth_Api = BASE_AUTH_API;
-  const Scope = [
-    "user-read-private",
-    "user-read-email",
-    "user-modify-playback-state",
-    "user-read-playback-state",
-    "user-read-currently-playing",
-    "user-read-recently-played",
-    "user-top-read",
-  ];
-  const Response_Type = "token";
-  const openData = `${Auth_Api}?client_id=${Client_Id}&redirect_uri=${Redirect_Uri}&response_type=${Response_Type}&scope=${Scope}`;
-
   const dispatch = useDispatch();
 
   useEffect(() => {
