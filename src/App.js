@@ -26,14 +26,14 @@ function App() {
         <Switch>
           <Route exact path="/">
             {isAuthorized ? (
-              <Redirect exact from="/" to="/create-playlist" />
+              <Redirect exact from="/" to="/Dashboard" />
             ) : (
               <LandingPage />
             )}
           </Route>
-          <Route path="/create-playlist">
+          <Route path="/Dashboard">
             {!isAuthorized ? (
-              <Redirect exact from="/create-playlist" to="/" />
+              <Redirect exact from="/Dashboard" to="/" />
             ) : (
               <Dashboard logout={logout} />
             )}

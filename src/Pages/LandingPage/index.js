@@ -35,6 +35,7 @@ function LandingPage() {
       window.location.hash = "";
       window.localStorage.setItem("token", token);
     }
+
     dispatch(setToken(token));
   }, [dispatch]);
 
@@ -52,7 +53,7 @@ function LandingPage() {
           <div className="flex justify-center pt-2">
             <a
               href={openData}
-              className="mt-5 focus:outline-none text-white bg-dark hover:bg-white hover:text-dark focus:ring-4 focus:ring-green-300 font-medium  text-sm px-10 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 rounded-full"
+              className="mt-5 focus:outline-none text-white bg-darks hover:bg-white hover:text-darks focus:ring-4 focus:ring-green-300 font-medium  text-sm px-10 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 rounded-full"
             >
               <button variant="primary">Login</button>
             </a>
