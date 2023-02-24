@@ -4,10 +4,7 @@ import Fitur from "./Detail/Fitur";
 import Playlist from "./Detail/Playlist";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlaylist } from "../../Store/playlist";
-import { SELECTED_PLAYLIST } from "../../Config/urlApi";
-import axios from "axios";
 import { getPlaylist } from "../../Lib/fetchApi";
-// import { getPlaylist } from "../../Lib/fetchApi";
 
 function Sidebar() {
   const dispatch = useDispatch();

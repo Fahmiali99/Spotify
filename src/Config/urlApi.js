@@ -15,5 +15,6 @@ export const openData = `${Auth_Api}?client_id=${Client_Id}&redirect_uri=${Redir
 
 export const FETCH_PROFILE = "https://api.spotify.com/v1/me";
 export const FETCH_PLAYLISTS = "https://api.spotify.com/v1/me/playlists";
+export const FETCH_SELECTED_PLAYLIST = "https://api.spotify.com/v1/playlists";
 export const CURRENTLY_PLAYING_TRACK =
   "https://api.spotify.com/v1/me/player/currently-playing";

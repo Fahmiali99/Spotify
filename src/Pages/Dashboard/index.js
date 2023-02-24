@@ -7,17 +7,15 @@ import Body from "./Body";
 
 function Dashboard({ logout }) {
   return (
-    <div className="">
-      <div className=" ">
-        <div className="">
-          <Sidebar />
-          <div className=" sm:ml-64 ">
-            <Navbar logout={logout} />
-            <Body />
-          </div>
+    <div className=" ">
+      <div className="">
+        <Sidebar />
+        <div className=" sm:ml-64 ">
+          <Navbar logout={logout} />
+          <Body />
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

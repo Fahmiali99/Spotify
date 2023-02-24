@@ -4,11 +4,14 @@ function Fitur({ href, Icons, title }) {
   return (
     <ul>
       <li>
-        <a href={href} className="flex items-center p-2 text-base font-normal">
-          <h1 className="text-3xl">
+        <a
+          href={href}
+          className="flex items-center py-2 px-2 text-base text-standart font-medium"
+        >
+          <h1 className="text-2xl">
             <Icons />
           </h1>
-          <span className="ml-3 text-white text-sm font-semibold">{title}</span>
+          <span className="ml-3  text-sm font-semibold">{title}</span>
         </a>
       </li>
     </ul>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 function Profile({ logout, name, imgUser, email, country }) {
@@ -34,7 +34,7 @@ function Profile({ logout, name, imgUser, email, country }) {
         </div>
         <div className="relative flex justify-end">
           <div
-            className={`z-50  fixed    my-3 text-base list-none bg-darks divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
+            className={`z-50  fixed    my-3 text-base list-none bg-darks divide-gray-700  divide-y rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
               open ? "block" : "hidden"
             }`}
             id="user-dropdown"
