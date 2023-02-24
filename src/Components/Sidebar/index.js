@@ -20,7 +20,6 @@ function Sidebar() {
     });
   }, [dispatch, isAuthorized]);
 
-  console.log(playlist);
   return (
     <div>
       <aside

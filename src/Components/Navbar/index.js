@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsSearch } from "react-icons/bs";
 import Profile from "./Detail/Profile";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile } from "../../Lib/fetchApi";
+import { setProfile } from "../../Store/profile";
 
 function Navbar({ logout }) {
+  const dispatch = useDispatch();
+  let { isAuthorized } = useSelector((state) => state.auth);
+  const { profile } = useSelector((state) => state.profile);
+
+  useEffect(() => {
+    getProfile(isAuthorized).then((data) => {
+      dispatch(setProfile(data));
+    });
+  }, [dispatch, isAuthorized]);
+
   return (
     <div>
       <div className="text-white bg-gray-800 z-20 fixed  w-full px-8 pt-6 pb-6 flex justify-between ">
@@ -24,7 +37,13 @@ function Navbar({ logout }) {
         </div>
         <div className=" sm:mr-64 flex items-center">
           <div className="flex justify-items-center items-center  px-1 py-1 rounded-full sm:mr-4">
-            <Profile logout={logout} />
+            <Profile
+              logout={logout}
+              country={profile.country}
+              name={profile?.display_name}
+              imgUser={profile.images?.[0].url}
+              email={profile.email}
+            />
           </div>
         </div>
       </div>
