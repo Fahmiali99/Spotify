@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  FETCH_CURRENTLY_PLAYING,
   FETCH_PLAYLISTS,
   FETCH_PROFILE,
   FETCH_SELECTED_PLAYLIST,
@@ -35,4 +36,14 @@ export const getSelectedPlaylist = async (token) => {
     }
   );
   return response?.data;
+};
+
+export const getCurrentPlaying = async (token) => {
+  const response = await axios.get(FETCH_CURRENTLY_PLAYING, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+  return response?.data?.item;
 };

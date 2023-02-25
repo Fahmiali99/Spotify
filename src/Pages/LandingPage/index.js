@@ -9,6 +9,7 @@ function LandingPage() {
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
+    console.log(token);
 
     if (!token && hash) {
       token = hash
