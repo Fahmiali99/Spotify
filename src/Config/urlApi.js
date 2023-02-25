@@ -1,4 +1,4 @@
-export const Client_Id = "ef0d7879ebe44432b2e88c347b56c2bb";
+export const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 export const Redirect_Uri = "http://localhost:3000/";
 export const Auth_Api = "https://accounts.spotify.com/authorize";
 export const Scope = [
@@ -11,7 +11,7 @@ export const Scope = [
   "user-top-read",
 ];
 export const Response_Type = "token";
-export const openData = `${Auth_Api}?client_id=${Client_Id}&redirect_uri=${Redirect_Uri}&response_type=${Response_Type}&scope=${Scope}`;
+export const openData = `${Auth_Api}?client_id=${CLIENT_ID}&redirect_uri=${Redirect_Uri}&response_type=${Response_Type}&scope=${Scope}`;
 
 export const FETCH_PROFILE = "https://api.spotify.com/v1/me";
 export const FETCH_PLAYLISTS = "https://api.spotify.com/v1/me/playlists";
