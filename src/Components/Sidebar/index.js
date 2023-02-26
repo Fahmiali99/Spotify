@@ -12,9 +12,12 @@ function Sidebar() {
   const { playlist } = useSelector((state) => state.playlist);
 
   useEffect(() => {
-    getPlaylist(isAuthorized).then((data) => {
-      dispatch(setPlaylist(data));
-    });
+    const interval = setInterval(() => {
+      getPlaylist(isAuthorized).then((data) => {
+        dispatch(setPlaylist(data));
+      });
+    }, 360);
+    return () => clearInterval(interval);
   }, [dispatch, isAuthorized]);
 
   return (

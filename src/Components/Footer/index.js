@@ -12,9 +12,12 @@ function Footer() {
   const { currentplay } = useSelector((state) => state.currentplay);
 
   useEffect(() => {
-    getCurrentPlaying(isAuthorized).then((data) => {
-      dispatch(setCurrentPlay(data));
-    });
+    const interval = setInterval(() => {
+      getCurrentPlaying(isAuthorized).then((data) => {
+        dispatch(setCurrentPlay(data));
+      });
+    }, 180);
+    return () => clearInterval(interval);
   }, [dispatch, isAuthorized]);
   return (
     <div className="px-4 py-4 border-t border-linese bg-play fixed bottom-0 w-full z-20 flex justify-between items-center text-white">

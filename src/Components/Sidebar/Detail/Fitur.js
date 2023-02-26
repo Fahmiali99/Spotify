@@ -6,7 +6,7 @@ function Fitur({ href, Icons, title }) {
       <li>
         <a
           href={href}
-          className="flex items-center py-2 px-2 text-base text-standart font-medium"
+          className="flex items-center py-2 px-2 text-base text-standart hover:text-white font-medium"
         >
           <h1 className="text-2xl">
             <Icons />
