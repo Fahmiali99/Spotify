@@ -9,7 +9,7 @@ import "./App.css";
 import LandingPage from "./Pages/LandingPage";
 import { useSelector, useDispatch } from "react-redux";
 import { removeToken } from "./Store/auth";
-import Dashboard from "./Pages/Dashboard";
+import Body from "./Pages/Body";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,20 +22,20 @@ function App() {
 
   return (
     <Router>
-      <div className="bg-slate-900 text-white  ">
+      <div className=" text-white  ">
         <Switch>
           <Route exact path="/">
             {isAuthorized ? (
-              <Redirect exact from="/" to="/Dashboard" />
+              <Redirect exact from="/" to="/dashboard" />
             ) : (
               <LandingPage />
             )}
           </Route>
-          <Route path="/Dashboard">
+          <Route path="/dashboard">
             {!isAuthorized ? (
-              <Redirect exact from="/Dashboard" to="/" />
+              <Redirect exact from="/dashboard" to="/" />
             ) : (
-              <Dashboard logout={logout} />
+              <Body logout={logout} />
             )}
           </Route>
         </Switch>

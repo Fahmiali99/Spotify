@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSelectedPlaylist } from "../../../Lib/fetchApi";
 import { setSelected } from "../../../Store/selected";
 
-import CoverPage from "../../../Components/Body/CoverPage";
-import SongsPage from "../../../Components/Body/SongsPage";
+import CoverPage from "../../../Components/Dashboard/CoverPage";
+import SongsPage from "../../../Components/Dashboard/SongsPage";
 
-function Body() {
+function Dashboard() {
   const dispatch = useDispatch();
   let { isAuthorized } = useSelector((state) => state.auth);
   const { selected } = useSelector((state) => state.selected);
@@ -38,4 +38,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default Dashboard;
