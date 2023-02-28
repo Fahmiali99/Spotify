@@ -10,6 +10,7 @@ import LandingPage from "./Pages/LandingPage";
 import { useSelector, useDispatch } from "react-redux";
 import { removeToken } from "./Store/auth";
 import Body from "./Pages/Body";
+import Profile from "./Pages/Body/Profile";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,18 +26,13 @@ function App() {
       <div className=" text-white  ">
         <Switch>
           <Route exact path="/">
-            {isAuthorized ? (
-              <Redirect exact from="/" to="/dashboard" />
-            ) : (
-              <LandingPage />
-            )}
+            {isAuthorized ? <Redirect to="/dashboard" /> : <LandingPage />}
           </Route>
-          <Route path="/dashboard">
-            {!isAuthorized ? (
-              <Redirect exact from="/dashboard" to="/" />
-            ) : (
-              <Body logout={logout} />
-            )}
+          <Route exact path="/dashboard">
+            {isAuthorized ? <Body logout={logout} /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/profile">
+            {isAuthorized ? <Profile logout={logout} /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </div>

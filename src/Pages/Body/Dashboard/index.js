@@ -19,21 +19,13 @@ function Dashboard() {
 
   return (
     <div>
-      <div className=" bg-gradient-to-b from-gray-700 via-gray-900 to-black">
-        <div className="  h-screen">
-          <div className=" px-8 pt-32 pb-32  overflow-y-scroll h-screen  ">
-            <div>
-              <CoverPage
-                image={selected.images?.[0].url}
-                name={selected.name}
-                description={selected.description}
-              />
+      <CoverPage
+        image={selected.images?.[0].url}
+        name={selected.name}
+        description={selected.description}
+      />
 
-              <SongsPage selected={selected} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <SongsPage selected={selected} />
     </div>
   );
 }
