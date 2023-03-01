@@ -18,7 +18,7 @@ function Dashboard() {
   }, [dispatch, isAuthorized]);
 
   return (
-    <div>
+    <div className=" px-8 pt-32 pb-32  overflow-y-scroll h-screen">
       <CoverPage
         image={selected.images?.[0].url}
         name={selected.name}

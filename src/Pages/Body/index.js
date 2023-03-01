@@ -15,11 +15,11 @@ function Body({ logout }) {
       <div className=" sm:ml-64 ">
         <Navbar logout={logout} back={<BackPage />} />
         <div className=" bg-gradient-to-b from-gray-700 via-gray-900 to-black">
-          <div className="  h-screen">
-            <div className=" px-8 pt-32 pb-32  overflow-y-scroll h-screen  ">
+          <div className="  ">
+            <div className="   ">
               <Switch>
                 <Route path="/dashboard" component={Dashboard} />
-                <Route path="/profile" component={Profile}></Route>
+                <Route path="/user" component={Profile}></Route>
               </Switch>
             </div>
           </div>
