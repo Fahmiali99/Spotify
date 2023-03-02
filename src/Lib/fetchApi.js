@@ -4,6 +4,7 @@ import {
   FETCH_PLAYLISTS,
   FETCH_PROFILE,
   FETCH_SELECTED_PLAYLIST,
+  FETCH_USER,
 } from "../Config/urlApi";
 
 export const getPlaylist = async (token) => {

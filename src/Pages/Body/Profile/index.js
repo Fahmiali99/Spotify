@@ -1,29 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile } from "../../../Lib/fetchApi";
+import { setProfile } from "../../../Store/profile";
+import User from "../../../Components/Profile/User";
 
 function Profile() {
+  const dispatch = useDispatch();
+  let { isAuthorized } = useSelector((state) => state.auth);
+  const { profile } = useSelector((state) => state.profile);
+
+  useEffect(() => {
+    getProfile(isAuthorized).then((data) => {
+      dispatch(setProfile(data));
+    });
+  }, [dispatch, isAuthorized]);
+
   return (
     <div className="h-screen">
-      <div className="flex px-8 py-8 pt-32  bg-gray-700">
-        <div className=" ">
-          <img
-            src="	https://i.scdn.co/image/ab6775700000ee85ba7517bff18e58754a94c220"
-            alt=""
-            width={232}
-            className="rounded-full"
-          />
-        </div>
-        <div className="flex items-end pl-7">
-          <div>
-            <h1 className="text-md font-medium">Profile</h1>
-            <h1 className=" text-8xl font-bold mb-7">Fahmiali13</h1>
-            <h1>
-              <span className="flex">
-                10 Playlist Publik <li className="mx-2 ">1 Mengikuti</li>
-              </span>
-            </h1>
-          </div>
-        </div>
-      </div>
+      <User name={profile?.display_name} imgUser={profile.images?.[0].url} />
     </div>
   );
 }

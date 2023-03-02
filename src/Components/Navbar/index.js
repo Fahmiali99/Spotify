@@ -36,7 +36,7 @@ function Navbar({ logout, back }) {
   }, [dropdownRef]);
 
   function goToProfile() {
-    history.push(`/user/${profile.images?.[0].url}`);
+    history.push(`user/${profile.id}`);
   }
 
   return (
