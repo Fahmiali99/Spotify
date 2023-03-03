@@ -14,8 +14,8 @@ function Body({ logout }) {
       <Sidebar />
       <div className=" sm:ml-64 ">
         <Navbar logout={logout} back={<BackPage />} />
-        <div className=" bg-gradient-to-b from-gray-700 via-gray-900 to-black">
-          <div className="  ">
+        <div className="  ">
+          <div className=" bg-gradient-to-b from-gray-700 via-gray-900 to-black ">
             <div className="   ">
               <Switch>
                 <Route path="/dashboard" component={Dashboard} />

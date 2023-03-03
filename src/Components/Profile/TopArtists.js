@@ -2,11 +2,13 @@ import React from "react";
 
 function TopArtists({ images, name, type }) {
   return (
-    <div className=" bg-indigo-500">
-      <img src={images} alt="" />
-      <div>
-        <h1>{name}</h1>
-        <h1>{type}</h1>
+    <div className="bg-Gstandart shadow-lg">
+      <div className="image-container rounded-full bg-primary overflow-hidden">
+        <img src={images} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="pt-4">
+        <h1 className="font-bold text-md mb-2">{name}</h1>
+        <p>{type}</p>
       </div>
     </div>
   );

@@ -16,6 +16,8 @@ module.exports = {
       linese: "#1f2937",
       // font
       standart: "#9ca3af",
+      // Card/Grid
+      Gstandart: "#282828",
     },
     // fontSize: {
     //   xs: "0.6875rem",

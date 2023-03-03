@@ -26,19 +26,23 @@ function Profile() {
   }, [dispatch, isAuthorized]);
 
   return (
-    <div className="h-screen">
+    <div className="">
       <User name={profile?.display_name} imgUser={profile.images?.[0].url} />
-      <div className="grid grid-cols-5 gap-4 bg-darks rounded-lg shadow-md">
-        {topartists.length
-          ? topartists.map((item, idx) => (
-              <TopArtists
-                key={idx}
-                images={item?.images?.[1].url}
-                name={item?.name}
-                type={item.type}
-              />
-            ))
-          : ""}
+      <div className="px-8">
+        <h1 className="text-3xl font-bold ">Top artists this month</h1>
+        <p className="text-standart">Only visible to you</p>
+        <div className="grid grid-cols-6 gap-4  shadow-md ">
+          {topartists.length
+            ? topartists.map((item, idx) => (
+                <TopArtists
+                  key={idx}
+                  images={item?.images?.[0].url}
+                  name={item?.name}
+                  type={item.type}
+                />
+              ))
+            : ""}
+        </div>
       </div>
       <PlayList />
     </div>
