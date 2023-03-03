@@ -4,6 +4,7 @@ import {
   FETCH_PLAYLISTS,
   FETCH_PROFILE,
   FETCH_SELECTED_PLAYLIST,
+  FETCH_TOP_ARTISTS,
 } from "../Config/urlApi";
 
 export const getPlaylist = async (token) => {
@@ -46,4 +47,14 @@ export const getCurrentPlaying = async (token) => {
     },
   });
   return response?.data?.item;
+};
+
+export const getTopArtists = async (token) => {
+  const response = await axios.get(FETCH_TOP_ARTISTS, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+  return response?.data?.items;
 };

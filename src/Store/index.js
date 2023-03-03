@@ -4,6 +4,7 @@ import playlist from "./playlist";
 import profile from "./profile";
 import selected from "./selected";
 import currentplay from "./currentplay";
+import topartists from "./topartists";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     profile: profile,
     selected: selected,
     currentplay: currentplay,
+    topartists: topartists,
   },
 });
