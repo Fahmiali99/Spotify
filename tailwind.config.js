@@ -18,6 +18,7 @@ module.exports = {
       standart: "#9ca3af",
       // Card/Grid
       Gstandart: "#282828",
+      HGstandar: "#404040",
     },
     // fontSize: {
     //   xs: "0.6875rem",
