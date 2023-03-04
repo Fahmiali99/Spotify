@@ -6,6 +6,7 @@ import User from "../../../Components/Profile/User";
 import TopArtists from "../../../Components/Profile/TopArtists";
 import PlayList from "../../../Components/Profile/PlayList";
 import { setTopArtists } from "../../../Store/topartists";
+import { playlist } from "../../../Utils/playlist";
 
 function Profile() {
   const dispatch = useDispatch();
@@ -50,7 +51,17 @@ function Profile() {
           </div>
         </div>
       </div>
-      <PlayList />
+
+      <div className="px-8 py-4">
+        <h1 className="text-3xl font-bold ">Public Playlist</h1>
+        <div className="mx-auto overflow-hidden">
+          <div className="grid grid-cols-2  md:grid-cols-6 gap-4 shadow-md py-4">
+            {playlist.slice(0, 6).map((item, idx) => (
+              <PlayList key={idx} images={item.images} name={item.name} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

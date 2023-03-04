@@ -1,7 +1,32 @@
 import React from "react";
+import { FaPlay } from "react-icons/fa";
+import { Substring } from "../../Utils/Substring";
+function PlayList({ images, name }) {
+  return (
+    <div className=" ">
+      <button
+        onClick={() => window.open("https://www.google.com/")}
+        className="hover:bg-HGstandar  bg-Gstandart shadow-lg p-4 rounded-lg transition duration-300 ease-in-out ..."
+      >
+        <div className="top-artists-wrapper ">
+          <div class="relative ">
+            <img class=" rounded-lg" src={images} alt="profileimage" />
+            <div className="play-icon-wrapper ">
+              <div class="bottom-2 right-2 absolute bg-primary w-10 h-10 flex justify-center items-center rounded-full ">
+                <FaPlay className="text-black" />
+              </div>
+            </div>
+          </div>
 
-function PlayList() {
-  return <div className=" bg-teal-500">PlayList</div>;
+          <div className="">
+            <div className="pt-4">
+              <h1 className="font-bold text-md mb-2">{Substring(name)}</h1>
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+  );
 }
 
 export default PlayList;
