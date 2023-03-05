@@ -44,7 +44,7 @@ function Sidebar() {
             />
           ))}
 
-          <ul className="pt-4 mt-4 space-y-2 border-t border-linese">
+          <ul className="pt-4 mt-4 space-y-2 border-t border-linese overflow-y-auto h-3/5 ...">
             {playlist.length ? (
               playlist.map((item, idx) => (
                 <Playlist key={idx} title={item.name} />

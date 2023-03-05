@@ -1,6 +1,6 @@
 import React from "react";
 
-function User({ name, imgUser }) {
+function User({ name, imgUser, totalplaylist }) {
   return (
     <div>
       <div className="flex px-8 py-8 pt-32  bg-gray-700">
@@ -13,7 +13,8 @@ function User({ name, imgUser }) {
             <h1 className=" text-8xl font-bold mb-7">{name}</h1>
             <h1>
               <span className="flex">
-                10 Playlist Publik <li className="mx-2 ">1 Mengikuti</li>
+                {totalplaylist} Playlist Publik{" "}
+                <li className="mx-2 ">1 Mengikuti</li>
               </span>
             </h1>
           </div>

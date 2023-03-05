@@ -9,10 +9,10 @@ function PlayList({ images, name }) {
         className="hover:bg-HGstandar  bg-Gstandart shadow-lg p-4 rounded-lg transition duration-300 ease-in-out ..."
       >
         <div className="top-artists-wrapper ">
-          <div class="relative ">
-            <img class=" rounded-lg" src={images} alt="profileimage" />
+          <div className="relative ">
+            <img className=" rounded-lg" src={images} alt="profileimage" />
             <div className="play-icon-wrapper ">
-              <div class="bottom-2 right-2 absolute bg-primary w-10 h-10 flex justify-center items-center rounded-full ">
+              <div className="bottom-2 right-2 absolute bg-primary w-10 h-10 flex justify-center items-center rounded-full ">
                 <FaPlay className="text-black" />
               </div>
             </div>
