@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { BsSearch } from "react-icons/bs";
 import Profile from "./Detail/Profile";
 import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../Lib/fetchApi";
 import { setProfile } from "../../Store/profile";
 
-function Navbar({ logout, back }) {
+function Navbar({ logout, back, search }) {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const history = useHistory();
@@ -36,27 +35,14 @@ function Navbar({ logout, back }) {
   }, [dropdownRef]);
 
   function goToProfile() {
-    history.push(`user/${profile.id}`);
+    history.push(`/user/${profile.id}`);
   }
 
   return (
     <div className="text-white bg-gray-800 z-20 fixed  w-full px-8 pt-6 pb-6 flex justify-between ">
       <div className="flex items-center">
         {back}
-        <form className="pl-10">
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <BsSearch className=" text-lg text-gray-500 dark:text-gray-400" />
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              className="block py-2.5 w-80 pl-10 text-sm text-gray-900 border border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 rounded-full"
-              placeholder="Apa yang ingin kamu dengarkan?"
-              required
-            />
-          </div>
-        </form>
+        {search}
       </div>
 
       <div className=" sm:mr-64 flex items-center">

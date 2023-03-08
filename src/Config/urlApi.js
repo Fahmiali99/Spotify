@@ -19,3 +19,4 @@ export const FETCH_SELECTED_PLAYLIST = "https://api.spotify.com/v1/playlists";
 export const FETCH_CURRENTLY_PLAYING =
   "https://api.spotify.com/v1/me/player/currently-playing";
 export const FETCH_TOP_ARTISTS = "https://api.spotify.com/v1/me/top/artists";
+export const FETCH_SEARCH = "https://api.spotify.com/v1/search";

@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeToken } from "./Store/auth";
 import Body from "./Pages/Body";
 import Profile from "./Pages/Body/Profile";
+import Search from "./Pages/Body/Search";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,8 +32,11 @@ function App() {
           <Route exact path="/dashboard">
             {isAuthorized ? <Body logout={logout} /> : <Redirect to="/" />}
           </Route>
-          <Route exact path="/profile">
+          <Route exact path="/user">
             {isAuthorized ? <Profile logout={logout} /> : <Redirect to="/" />}
+          </Route>
+          <Route exact path="/search">
+            {isAuthorized ? <Search /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </div>

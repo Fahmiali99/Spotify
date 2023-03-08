@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { sidebar } from "../../Utils/sidebar";
+
 import Fitur from "./Detail/Fitur";
 import Playlist from "./Detail/Playlist";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,14 +35,8 @@ function Sidebar() {
               width={130}
             />
           </div>
-          {sidebar.map((item, idx) => (
-            <Fitur
-              key={idx}
-              href={item.href}
-              Icons={item.Icons}
-              title={item.title}
-            />
-          ))}
+
+          <Fitur />
 
           <ul className="pt-4 mt-4 space-y-2 border-t border-linese overflow-y-auto h-3/5 ...">
             {playlist.length ? (

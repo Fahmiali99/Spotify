@@ -7,6 +7,7 @@ import Navbar from "../../Components/Navbar";
 import Dashboard from "./Dashboard";
 import Profile from "./Profile";
 import BackPage from "../../Components/Common/BackPage";
+import Search from "./Search";
 
 function Body({ logout }) {
   return (
@@ -20,6 +21,7 @@ function Body({ logout }) {
               <Switch>
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/user" component={Profile}></Route>
+                <Route path="/search" component={Search}></Route>
               </Switch>
             </div>
           </div>

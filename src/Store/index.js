@@ -5,14 +5,18 @@ import profile from "./profile";
 import selected from "./selected";
 import currentplay from "./currentplay";
 import topartists from "./topartists";
+import search from "./search";
+import songId from "./songId";
 
 export const store = configureStore({
   reducer: {
     auth: authentication,
     playlist: playlist,
     profile: profile,
-    selected: selected,
+    songId: songId,
     currentplay: currentplay,
     topartists: topartists,
+    search: search,
+    selected: selected,
   },
 });

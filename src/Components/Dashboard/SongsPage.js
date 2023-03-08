@@ -3,7 +3,7 @@ import { BiTime } from "react-icons/bi";
 import moment from "moment";
 import { TimeConverts } from "../../Utils/TimeConverts";
 
-function SongsPage({ selected }) {
+function SongsPage({ song }) {
   return (
     <div className="">
       <div className="pt-10 relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -28,8 +28,8 @@ function SongsPage({ selected }) {
               </th>
             </tr>
           </thead>
-          {selected.tracks?.items.length ? (
-            selected.tracks?.items.map((item, idx) => {
+          {song.tracks?.items.length ? (
+            song.tracks?.items.map((item, idx) => {
               return (
                 <tbody key={idx}>
                   <tr className="  dark:bg-gray-800   hover:bg-gray-700 hover:text-white">
@@ -60,7 +60,7 @@ function SongsPage({ selected }) {
                     </td>
                     <td className="px-6 py-4">
                       {moment(
-                        `${selected.tracks?.items?.[idx].added_at}`,
+                        `${song.tracks?.items?.[idx].added_at}`,
                         "YYYYMMDD"
                       ).format("ll")}
                     </td>

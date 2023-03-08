@@ -3,6 +3,7 @@ import {
   FETCH_CURRENTLY_PLAYING,
   FETCH_PLAYLISTS,
   FETCH_PROFILE,
+  FETCH_SEARCH,
   FETCH_SELECTED_PLAYLIST,
   FETCH_TOP_ARTISTS,
 } from "../Config/urlApi";
@@ -57,4 +58,19 @@ export const getTopArtists = async (token) => {
     },
   });
   return response?.data?.items;
+};
+
+export const getSearching = async (token, search) => {
+  const response = await axios.get(FETCH_SEARCH, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    params: {
+      q: search,
+      type: "track",
+      limit: 10,
+    },
+  });
+  return response?.data;
 };
