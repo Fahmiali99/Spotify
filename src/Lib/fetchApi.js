@@ -69,7 +69,7 @@ export const getSearching = async (token, search) => {
     params: {
       q: search,
       type: "track",
-      limit: 10,
+      limit: 18,
     },
   });
   return response?.data;

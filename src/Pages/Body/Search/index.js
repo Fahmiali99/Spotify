@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../../../Components/Navbar";
-
 import BackPage from "../../../Components/Common/BackPage";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearching } from "../../../Lib/fetchApi";
 import { setQuerySearch } from "../../../Store/search";
-import { setPlaylistForm } from "../../../Store/playlist";
-import { setSelected, setSelectedPlaylistId } from "../../../Store/selected";
 import FromInput from "../../../Components/Search/FromInput";
 import Songs from "../../../Components/Search/Songs";
 import { TimeConverts } from "../../../Utils/TimeConverts";
+import { setSongId } from "../../../Store/songId";
 
 function Search() {
   const dispatch = useDispatch();
@@ -17,35 +15,14 @@ function Search() {
 
   let { isAuthorized } = useSelector((state) => state.auth);
   let { searchQuery, searchItem } = useSelector((state) => state.search);
-  let { playlistForm } = useSelector((state) => state.playlist);
-  const { selected, selectedPlaylistId } = useSelector(
-    (state) => state.selected
-  );
-
-  const handleFormChange = (e) => {
-    dispatch(
-      setPlaylistForm({
-        ...playlistForm,
-        [e.target.name]: e.target.value,
-      })
-    );
-  };
+  const { song } = useSelector((state) => state.songId);
 
   const handleSearching = async (e) => {
     e.preventDefault();
     getSearching(isAuthorized, searchData).then((data) => {
-      dispatch(setSelected(data.tracks.items));
+      dispatch(setSongId(data.tracks.items));
     });
     dispatch(setQuerySearch(searchData));
-  };
-
-  const toggleSelect = (song) => {
-    const uri = song.uri;
-    if (selectedPlaylistId.includes(uri)) {
-      dispatch(setSelectedPlaylistId(selected.filter((data) => data !== uri)));
-    } else {
-      dispatch(setSelectedPlaylistId([...selected, uri]));
-    }
   };
 
   return (
@@ -63,7 +40,7 @@ function Search() {
       />
       <div className=" px-8 pt-32 pb-32  overflow-y-scroll h-screen">
         {!searchItem ? (
-          selected.length ? (
+          song.length ? (
             <h1 className="text-2xl font-medium pt-6 mb-2">
               Top songs for you
             </h1>
@@ -73,20 +50,20 @@ function Search() {
             Result for "{searchQuery}"
           </h1>
         )}
-        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-4 py-5">
-          {selected.length
-            ? selected.map((track, idx) => (
-                <Songs
-                  key={idx}
-                  title={track.name}
-                  artists={track.artists[0].name}
-                  image={track.album.images[0].url}
-                  duration={TimeConverts(track.duration_ms)}
-                  buttonSelect={() => toggleSelect(track)}
-                  select={selectedPlaylistId.includes(track.uri)}
-                />
-              ))
-            : null}
+        <div className="mx-auto overflow-hidden">
+          <div className="grid grid-cols-2  md:grid-cols-6 gap-4 shadow-md py-4">
+            {song.length
+              ? song.map((track, idx) => (
+                  <Songs
+                    key={idx}
+                    title={track.name}
+                    artists={track.artists[0].name}
+                    image={track.album.images[0].url}
+                    duration={TimeConverts(track.duration_ms)}
+                  />
+                ))
+              : null}
+          </div>
         </div>
       </div>
     </div>

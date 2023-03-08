@@ -2,10 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   playlist: {},
-  playlistForm: {
-    title: "",
-    description: "",
-  },
 };
 
 export const playlist = createSlice({
@@ -15,11 +11,8 @@ export const playlist = createSlice({
     setPlaylist: (state, action) => {
       state.playlist = action.payload;
     },
-    setPlaylistForm: (state, action) => {
-      state.playlistForm = action.payload;
-    },
   },
 });
 
-export const { setPlaylist, setPlaylistForm } = playlist.actions;
+export const { setPlaylist } = playlist.actions;
 export default playlist.reducer;

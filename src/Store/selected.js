@@ -12,9 +12,6 @@ export const selected = createSlice({
     setSelected: (state, action) => {
       state.selected = action.payload;
     },
-    setSelectedPlaylistId: (state, action) => {
-      state.selectedPlaylistId = action.payload;
-    },
   },
 });
 

@@ -1,3 +1,5 @@
+import { FaPlay } from "react-icons/fa";
+import { Substring } from "../../Utils/Substring";
 const Songs = ({ title, artists, image, duration, buttonSelect, select }) => {
   const handleSelect = () => {
     buttonSelect();
@@ -5,39 +7,28 @@ const Songs = ({ title, artists, image, duration, buttonSelect, select }) => {
 
   return (
     <div>
-      <div className="card lg:card-side card-compact bg-base-100 shadow-xl">
-        <img
-          className="h-40 w-full object-cover sm:h-full xl:w-48"
-          src={image}
-          alt="Album"
-        />
-        <div className="card-body truncate">
-          <div className="m-2 lg:mb-6 truncate">
-            <span className="text-sm lg:text-xl font-bold">{title}</span>
-            <p className="font-normal  sm:font-semibold">{artists}</p>
-            <p className="text-primary-focus">{duration}</p>
+      <button
+        onClick={() => window.open("https://www.google.com/")}
+        className="hover:bg-HGstandar  bg-Gstandart shadow-lg p-4 rounded-lg transition duration-300 ease-in-out ..."
+      >
+        <div className="top-artists-wrapper ">
+          <div className="relative ">
+            <img className=" rounded-lg" src={image} alt="profileimage" />
+            <div className="play-icon-wrapper ">
+              <div className="bottom-2 right-2 absolute bg-primary w-10 h-10 flex justify-center items-center rounded-full ">
+                <FaPlay className="text-black" />
+              </div>
+            </div>
           </div>
-          <div className="card-actions justify-center sm:justify-end">
-            {select ? (
-              <button
-                data-testid="selected-button"
-                className="btn btn-sm md:btn-md gap-2 btn-secondary"
-                onClick={handleSelect}
-              >
-                Selected
-              </button>
-            ) : (
-              <button
-                data-testid="select-button"
-                className="btn btn-sm md:btn-md btn-primary"
-                onClick={handleSelect}
-              >
-                Select
-              </button>
-            )}
+
+          <div className="">
+            <div className="pt-4">
+              <h1 className="font-bold text-md mb-2">{Substring(title)}</h1>
+              <p className="font-medium text-xs mb-2">{Substring(artists)}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </button>
     </div>
   );
 };
