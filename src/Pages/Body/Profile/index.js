@@ -63,7 +63,7 @@ function Profile() {
       <div className="px-8 py-4">
         <h1 className="text-3xl font-bold ">Public Playlist</h1>
         <div className="mx-auto overflow-hidden">
-          <div className="grid grid-cols-2  md:grid-cols-6 gap-4 shadow-md py-4 overflow-y-auto h-96 ...">
+          <div className="grid grid-cols-2  md:grid-cols-6 gap-4 shadow-md py-4 overflow-y-auto  ...">
             {playlist.length
               ? playlist.slice(0, 6).map((item, idx) => {
                   return (
