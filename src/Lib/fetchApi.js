@@ -40,6 +40,8 @@ export const getSelectedPlaylist = async (token) => {
   return response?.data;
 };
 
+// Selected to idx
+
 export const getCurrentPlaying = async (token) => {
   const response = await axios.get(FETCH_CURRENTLY_PLAYING, {
     headers: {
