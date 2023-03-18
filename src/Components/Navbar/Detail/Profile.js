@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMdArrowDropdown, IoMdLogOut } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { BiLinkExternal } from "react-icons/bi";
 
 function Profile({
@@ -27,7 +27,7 @@ function Profile({
     },
     {
       title: "Logout",
-      Icons: IoMdLogOut,
+      Icons: null,
       link: logout,
     },
   ];
@@ -37,11 +37,7 @@ function Profile({
         <button
           type="button"
           onClick={toggleProfile}
-          className=" flex items-center mr-3 text-sm bg-darks rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-          id="user-menu-button"
-          aria-expanded="false"
-          data-dropdown-toggle="user-dropdown"
-          data-dropdown-placement="bottom"
+          className=" flex items-center mr-3 text-sm bg-Gstandart rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
         >
           <span className="sr-only">Open user menu</span>
 
@@ -53,7 +49,7 @@ function Profile({
       </div>
       <div className="relative flex justify-end" ref={dropdownRef}>
         <div
-          className={`z-50  fixed    my-3 text-base list-none bg-darks divide-gray-700  divide-y rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
+          className={`z-50  fixed    my-3 text-base list-none bg-Gstandart divide-gray-700  divide-y rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
             open ? "block" : "hidden"
           }`}
           id="user-dropdown"
@@ -72,7 +68,7 @@ function Profile({
                 {data.map((item, idx) => (
                   <li
                     key={idx}
-                    className="block text-sm  hover:bg-gray-900 dark:text-gray-200 dark:hover:text-white"
+                    className="block text-sm  hover:bg-HGstandar dark:text-gray-200 dark:hover:text-white"
                   >
                     <button
                       type="button"
@@ -80,7 +76,7 @@ function Profile({
                       className="flex items-center justify-between text-sm  w-full px-4 py-2 "
                     >
                       {item.title}
-                      <item.Icons className="text-lg" />
+                      {item.Icons ? <item.Icons className="text-lg" /> : null}
                     </button>
                   </li>
                 ))}

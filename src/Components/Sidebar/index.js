@@ -27,7 +27,7 @@ function Sidebar() {
         className="fixed z-0 top-0 left-0  w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div className="h-full px-4 py-4 overflow-y-auto bg-darks text-white ">
+        <div className="h-full px-4 py-4  bg-darks text-white ">
           <div className="p-2 pb-5">
             <img
               src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
@@ -38,7 +38,7 @@ function Sidebar() {
 
           <Fitur />
 
-          <ul className="pt-4 mt-4 space-y-2 border-t border-linese overflow-y-auto h-3/5 ...">
+          <ul className="pt-4 mt-4 space-y-2 border-t border-linese hover:overflow-y-auto  h-3/5 ...">
             {playlist.length ? (
               playlist.map((item, idx) => (
                 <Playlist key={idx} title={item.name} />
