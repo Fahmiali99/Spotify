@@ -12,8 +12,14 @@ function Profile({
   goToProfile,
   open,
   dropdownRef,
+  goToAkun,
 }) {
   const data = [
+    {
+      title: "Akun",
+      Icons: BiLinkExternal,
+      link: goToAkun,
+    },
     {
       title: "Profile",
       Icons: BiLinkExternal,

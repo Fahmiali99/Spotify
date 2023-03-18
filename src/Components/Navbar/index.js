@@ -38,6 +38,12 @@ function Navbar({ logout, back, search }) {
     history.push(`/user/${profile.id}`);
   }
 
+  function goToAkun() {
+    return window.open(
+      "https://www.spotify.com/id-id/account/overview/?utm_source=spotify&utm_medium=menu&utm_campaign=your_account"
+    );
+  }
+
   return (
     <div className="text-white bg-gray-800 z-20 fixed  w-full px-8 pt-6 pb-6 flex justify-between ">
       <div className="flex items-center">
@@ -57,6 +63,7 @@ function Navbar({ logout, back, search }) {
             goToProfile={goToProfile}
             open={open}
             dropdownRef={dropdownRef}
+            goToAkun={goToAkun}
           />
         </div>
       </div>
