@@ -1,5 +1,6 @@
 export const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-export const Redirect_Uri = "https://musicaly.vercel.app/";
+// export const Redirect_Uri = "https://musicaly.vercel.app/";
+export const Redirect_Uri = "http://localhost:3000/";
 export const Auth_Api = "https://accounts.spotify.com/authorize";
 export const Scope = [
   "user-read-private",

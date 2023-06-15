@@ -25,7 +25,7 @@ function Dashboard() {
         description={song.description}
       />
 
-      <SongsPage song={song} />
+      <SongsPage song={song.tracks?.items} />
     </div>
   );
 }
