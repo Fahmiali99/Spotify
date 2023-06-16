@@ -28,8 +28,8 @@ function SongsPage({ song }) {
               </th>
             </tr>
           </thead>
-          {song.length ? (
-            song.map((item, idx) => {
+          {song?.length ? (
+            song?.map((item, idx) => {
               return (
                 <tbody key={idx}>
                   <tr className="  dark:bg-gray-800   hover:bg-gray-700 hover:text-white">
