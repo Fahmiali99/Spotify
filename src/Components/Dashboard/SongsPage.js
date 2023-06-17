@@ -73,13 +73,13 @@ function SongsPage({ song }) {
               );
             })
           ) : (
-            <thead className=" text-2xl font-medium pt-6 mb-2">
+            <div className=" text-2xl font-medium pt-6 mb-2">
               <tr>
-                <th scope="col" className="p-4">
+                <h1 scope="col" className="p-4">
                   You haven't best of songs
-                </th>
+                </h1>
               </tr>
-            </thead>
+            </div>
           )}
         </table>
       </div>

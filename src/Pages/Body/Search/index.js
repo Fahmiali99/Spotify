@@ -13,7 +13,6 @@ import Songs from "../../../Components/Search/Songs";
 function Search() {
   const dispatch = useDispatch();
   const [searchData, setSearchData] = useState("");
-
   let { isAuthorized } = useSelector((state) => state.auth);
   let { searchQuery, searchItem } = useSelector((state) => state.search);
   const { song } = useSelector((state) => state.songId);
