@@ -1,9 +1,12 @@
 import React from "react";
 import { Substring } from "../../Utils/Substring";
 import { FaPlay } from "react-icons/fa";
-function TopArtists({ images, name, type }) {
+function TopArtists({ images, name, type, link }) {
   return (
-    <button className="hover:bg-HGstandar bg-Gstandart shadow-lg p-4 rounded-lg">
+    <button
+      onClick={() => window.open(link)}
+      className="hover:bg-HGstandar bg-Gstandart shadow-lg p-4 rounded-lg"
+    >
       <div className="top-artists-wrapper">
         <div className=" relative">
           <div className="w-full  flex justify-center">

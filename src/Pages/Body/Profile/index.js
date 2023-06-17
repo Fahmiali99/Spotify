@@ -50,6 +50,7 @@ function Profile() {
                     images={item?.images?.[0].url}
                     name={item?.name}
                     type={item.type}
+                    link={item?.external_urls?.spotify}
                   />
                 );
               })
@@ -69,8 +70,9 @@ function Profile() {
                   return (
                     <PlayList
                       key={idx}
-                      images={item.images?.[0]?.url}
+                      images={item?.images?.[0]?.url}
                       name={item?.name}
+                      link={item?.external_urls?.spotify}
                     />
                   );
                 })

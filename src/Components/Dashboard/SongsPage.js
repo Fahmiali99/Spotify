@@ -59,10 +59,9 @@ function SongsPage({ song }) {
                       {item.track.album.name}
                     </td>
                     <td className="px-6 py-4">
-                      {moment(
-                        `${song.tracks?.items?.[idx].added_at}`,
-                        "YYYYMMDD"
-                      ).format("ll")}
+                      {moment(`${song?.[idx].added_at}`, "YYYYMMDD").format(
+                        "ll"
+                      )}
                     </td>
 
                     <td className="px-6 py-4">
@@ -73,13 +72,13 @@ function SongsPage({ song }) {
               );
             })
           ) : (
-            <div className=" text-2xl font-medium pt-6 mb-2">
+            <thead className=" text-2xl font-medium pt-6 mb-2">
               <tr>
-                <h1 scope="col" className="p-4">
+                <th scope="col" className="p-4">
                   You haven't best of songs
-                </h1>
+                </th>
               </tr>
-            </div>
+            </thead>
           )}
         </table>
       </div>

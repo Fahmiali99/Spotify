@@ -1,11 +1,11 @@
 import React from "react";
 import { FaPlay } from "react-icons/fa";
 import { Substring } from "../../Utils/Substring";
-function PlayList({ images, name }) {
+function PlayList({ images, name, link }) {
   return (
     <div className=" ">
       <button
-        onClick={() => window.open("https://www.google.com/")}
+        onClick={() => window.open(link)}
         className="hover:bg-HGstandar  bg-Gstandart shadow-lg p-4 rounded-lg transition duration-300 ease-in-out ..."
       >
         <div className="top-artists-wrapper ">
@@ -18,11 +18,7 @@ function PlayList({ images, name }) {
             </div>
           </div>
 
-          <div className="">
-            <div className="pt-4">
-              <h1 className="font-bold text-md mb-2">{Substring(name)}</h1>
-            </div>
-          </div>
+          <h1 className="pt-4 font-bold text-md mb-2">{Substring(name)}</h1>
         </div>
       </button>
     </div>
