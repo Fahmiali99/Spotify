@@ -44,8 +44,8 @@ function Sidebar() {
                 <Playlist key={idx} title={item.name} />
               ))
             ) : (
-              <h1 className=" text-2xl font-medium pt-6 mb-2">
-                You not have playlist
+              <h1 className=" text-xl font-medium pt-6 mb-2">
+                You don't have playlists
               </h1>
             )}
           </ul>
