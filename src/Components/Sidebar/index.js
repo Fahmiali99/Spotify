@@ -21,7 +21,7 @@ function Sidebar() {
   }, [dispatch, isAuthorized]);
 
   return (
-    <div>
+    <>
       <aside
         id="separator-sidebar"
         className="fixed z-0 top-0 left-0  w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
@@ -51,7 +51,7 @@ function Sidebar() {
           </ul>
         </div>
       </aside>
-    </div>
+    </>
   );
 }
 

@@ -39,19 +39,16 @@ function Fitur() {
   return (
     <div>
       {sidebar.map((item, idx) => (
-        <ul key={idx}>
-          <li>
-            <button
-              onClick={item.onClick}
-              className="flex items-center py-2 px-2 text-base text-standart hover:text-white font-medium"
-            >
-              <h1 className="text-2xl">
-                <item.Icons />
-              </h1>
-              <span className="ml-3  text-sm font-semibold">{item.title}</span>
-            </button>
-          </li>
-        </ul>
+        <button
+          key={idx}
+          onClick={item.onClick}
+          className="flex items-center py-2 px-2 text-base text-standart hover:text-white font-medium"
+        >
+          <h1 className="text-2xl">
+            <item.Icons />
+          </h1>
+          <span className="ml-3  text-sm font-semibold">{item.title}</span>
+        </button>
       ))}
     </div>
   );

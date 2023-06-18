@@ -28,11 +28,10 @@ function TopArtists({ images, name, type, link }) {
             </div>
           </div>
         </div>
-        <div className="">
-          <div className="pt-4">
-            <h1 className="font-bold text-md mb-2">{Substring(name)}</h1>
-            <p>{type}</p>
-          </div>
+
+        <div className="pt-4">
+          <h1 className="font-bold text-md mb-2">{Substring(name)}</h1>
+          <p>{type}</p>
         </div>
       </div>
     </button>
