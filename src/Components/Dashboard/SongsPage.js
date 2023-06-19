@@ -3,7 +3,7 @@ import { BiTime } from "react-icons/bi";
 import moment from "moment";
 import { TimeConverts } from "../../Utils/TimeConverts";
 
-function SongsPage({ song }) {
+function SongsPage({ song, link }) {
   return (
     <div className="">
       <div className="pt-10 relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -28,6 +28,7 @@ function SongsPage({ song }) {
               </th>
             </tr>
           </thead>
+
           {song?.length ? (
             song?.map((item, idx) => {
               return (

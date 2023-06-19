@@ -41,7 +41,11 @@ function Sidebar() {
           <ul className="pt-4 mt-4 space-y-2 border-t border-linese hover:overflow-y-auto  h-3/5 ...">
             {playlist.length ? (
               playlist.map((item, idx) => (
-                <Playlist key={idx} title={item.name} />
+                <Playlist
+                  key={idx}
+                  title={item.name}
+                  link={item?.external_urls?.spotify}
+                />
               ))
             ) : (
               <h1 className=" text-xl font-medium pt-6 mb-2">

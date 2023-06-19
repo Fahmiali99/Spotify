@@ -1,9 +1,9 @@
 import { FaPlay } from "react-icons/fa";
 import { Substring } from "../../Utils/Substring";
-const SongSearch = ({ title, artists, image }) => {
+const SongSearch = ({ title, artists, image, link }) => {
   return (
     <button
-      onClick={() => window.open("https://www.google.com/")}
+      onClick={() => window.open(link)}
       className="hover:bg-HGstandar  bg-Gstandart shadow-lg p-4 rounded-lg transition duration-300 ease-in-out ..."
     >
       <div className="top-artists-wrapper ">

@@ -49,11 +49,12 @@ function Search() {
             <h1 className="text-2xl font-medium pt-6 mb-2">Your Songs</h1>
             <div className="mx-auto overflow-hidden">
               <div className="grid grid-cols-2  md:grid-cols-6 gap-4 shadow-md py-4">
-                {playlist.map((list, idx) => (
+                {playlist.map((item, idx) => (
                   <Songs
                     key={idx}
-                    image={list.images[0].url}
-                    title={list.name}
+                    image={item?.images[0].url}
+                    title={item?.name}
+                    link={item?.external_urls?.spotify}
                   />
                 ))}
               </div>
@@ -63,13 +64,14 @@ function Search() {
         <div className="mx-auto overflow-hidden">
           <div className="grid grid-cols-2  md:grid-cols-6 gap-4 shadow-md py-4">
             {song.length
-              ? song.map((track, idx) => (
+              ? song.map((item, idx) => (
                   <SongSearch
                     key={idx}
-                    title={track.name}
-                    artists={track.artists[0].name}
-                    image={track.album.images[0].url}
-                    duration={TimeConverts(track.duration_ms)}
+                    title={item?.name}
+                    artists={item?.artists[0].name}
+                    image={item?.album.images[0].url}
+                    duration={TimeConverts(item?.duration_ms)}
+                    link={item?.external_urls?.spotify}
                   />
                 ))
               : null}
