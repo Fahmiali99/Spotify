@@ -24,7 +24,7 @@ function Dashboard() {
         description={song.description}
       />
 
-      <SongsPage song={song.tracks?.items} link={song.external_urls?.spotify} />
+      <SongsPage song={song.tracks?.items} />
     </div>
   );
 }

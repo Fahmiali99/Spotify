@@ -3,12 +3,12 @@ import { BiTime } from "react-icons/bi";
 import moment from "moment";
 import { TimeConverts } from "../../Utils/TimeConverts";
 
-function SongsPage({ song, link }) {
+function SongsPage({ song }) {
   return (
     <div className="">
       <div className="pt-10 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-standart ">
-          <thead className="text-xs uppercase     space-y-2 border-b border-gray-700 ">
+          <thead className="text-xs uppercase space-y-2 border-b border-gray-700 ">
             <tr>
               <th scope="col" className="p-4">
                 #
